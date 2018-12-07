@@ -1,1 +1,18 @@
+title: Air Notice
+description: > 
+  watching Air Pollution for you!
+  
+#Air Notice is a free iOS App that always watches air pollution for you, provides Real-time Air Quality Index (AQI) and Air Quality forecast
+
+author: Deng Junqiang
+email: sh109419@163.com
+
+show_excerpts: false # set to true to show excerpts on the homepage
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+# Build settings
 theme: jekyll-theme-slate
