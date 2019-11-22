@@ -2,12 +2,12 @@
 
 ![Air Look](./image/icon-60@3x.png)
 
-to visualize pollution with animation of particulate matter in the air; free iOS App; ad-free; no registration required.
+see how dirty the air is; see how much dust you eat every day; free iOS App; ad-free; no registration required.
 
 
 ## Key Features
-- ✅ **Visualize Air Pollution**: animation demo particulate matter in the air.
-
+- ✅ **Particulate Matter(PM) Quantity**: See how many particles are in the air.
+- ✅ **Particulate Matter(PM) Weight**: See how heavy the particles are in the air.
 
 ## Other Features
 - ✅ **Air Pollution Alert**: push notification to you when the air quality worsens.
@@ -21,9 +21,11 @@ All data provided by the [World Air Quality Index Project](https://waqi.info).
 
 ## Screen Shots
 
-![main](./image/app-root.png)         ![alert](./image/app-alert.png)
+![main](./image/1.png)         ![alert](./image/app-alert.png)
 
-![aqi](./image/app-aqi.png)         ![map](./image/app-map.png)
+![quantity](./image/2.png)         ![weight](./image/3.png)
+
+![aqi](./image/4.png)         ![map](./image/5.png)
 
 ## Contact
 If you have any questions please contact [Deng junqiang](mailto:sh109419@163.com).
