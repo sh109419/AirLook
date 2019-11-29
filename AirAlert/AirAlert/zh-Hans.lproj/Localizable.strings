@@ -1,0 +1,143 @@
+/* 
+  Languages.strings
+  AirAlert
+
+  Created by hyf on 2018/12/13.
+  Copyright © 2018年 Deng Junqiang. All rights reserved.
+*/
+
+/* AppDelegate.swift */
+
+/* Class = "UIAlertController"; title = "Enable notifications?"; */
+"Enable notifications?" = "允许消息推送？";
+
+"Only air pollution notifications be pushed." = "本App只推送空气污染消息。";
+
+"Settings" = "设置";
+
+"Cancel" = "取消";
+
+/* AirData.swift */
+
+/* struct DateTime  func getUpdatedTimeString() -> String */
+
+"Updated on %@" = "%@ 更新";
+
+/* Common.swift */
+
+/* struct AqiTable */
+
+/* record: [AqiRecord] */
+"Good" = "良好";
+
+"Air quality is considered satisfactory, and air pollution poses little or no risk." = "空气质量令人满意，基本无空气污染，各类人群可正常活动。";
+
+"Moderate" = "中等";
+
+"Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution." = "空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响，建议极少数异常敏感人群应减少户外活动。";
+
+"Unhealthy for Sensitive Groups" = "对敏感人群不健康";
+
+"Members of sensitive groups may experience health effects. The general public is not likely to be affected." = "易感人群症状有轻度加剧，健康人群出现刺激症状。建议儿童、老年人及心脏病、呼吸系统疾病患者应减少长时间、高强度的户外锻炼。";
+
+"Unhealthy" = "不健康";
+
+"Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects." = "进一步加剧易感人群症状，可能对健康人群心脏、呼吸系统有影响，建议疾病患者避免长时间、高强度的户外锻练，一般人群适量减少户外运动。";
+
+"Very Unhealthy" = "非常不健康";
+
+"Health warnings of emergency conditions. The entire population is more likely to be affected." = "心脏病和肺病患者症状显著加剧，运动耐受力降低，健康人群普遍出现症状，建议儿童、老年人和心脏病、肺病患者应停留在室内，停止户外运动，一般人群减少户外运动。";
+
+"Hazardous" = "有毒害";
+
+"Health alert: everyone may experience more serious health effects." = "健康人群运动耐受力降低，有明显强烈症状，提前出现某些疾病，建议儿童、老年人和病人应当留在室内，避免体力消耗，一般人群应避免户外活动。";
+
+/* struct RowTitle */
+
+"AQI" = "空气质量指数";
+
+"Air Pollution Level" = "空气质量级别";
+
+"Health Implications" = "健康提示";
+
+/* AirTableViewController.swift */
+
+/* func viewDidLoad() */
+
+"release to refresh" = "释放刷新";
+
+/* func requestLocation() */
+
+/* UIAlertController */
+
+"Enable location services?" = "允许定位服务？";
+
+"Your location is used to get air information in your city." = "您的位置将用来获取所在城市的空气质量信息。";
+
+/* func refreshUI() */
+
+"today" = "今天";
+
+/* extension AirTableViewController: UICollectionViewDataSource */
+
+/* func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+*/
+
+"Now" = "现在";
+
+/* ChangeCityTableViewController.swift */
+
+/* cityArray */
+
+"Beijing" = "北京";
+
+"Shanghai" = "上海";
+
+"Guangzhou" = "广州";
+
+"Chengdu" = "成都";
+
+"Shenyang" = "沈阳";
+
+/* override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  */
+
+"there is no result for your search (%@)" = "没有找到与“%@”相关的站点";
+
+"US Embassy and Consulates" = "美国使领馆";
+
+/* LanguageTableViewController.swift */
+
+/* @IBAction func DoneAction(_ sender: Any) */
+
+"Would you like to change the App language to %@?" = "您要将App语言更改为%@吗？";
+
+"Change to %@" = "更改为%@";
+
+/* Remote Push Notifications */
+
+// title loc key
+"Alert" = "警报";
+"All Clear" = "警报解除";
+
+// loc key
+"the current AQI is %@ Good" = "当前空气质量指数 %@ 优良";
+"the current AQI is %@ Moderate" = "当前空气质量指数 %@ 中等";
+"the current AQI is %@ Unhealthy for Sensitive Groups" = "当前空气质量指数 %@ 对敏感人群不健康";
+"the current AQI is %@ Unhealthy" = "当前空气质量指数 %@ 不健康";
+"the current AQI is %@ Very Unhealthy" = "当前空气质量指数 %@ 非常不健康";
+"the current AQI is %@ Hazardous" = "当前空气质量指数 %@ 有毒害";
+
+// tab bar controller for AQI details
+
+"AQI Forcast" = "空气质量预报";
+"Individual AQI" = "空气质量指数详情";
+"Nearest Cities" = "附近的站点";
+"City Map" = "站点地图";
+"PM Quantity" = "颗粒物数量";
+"PM Weight" = "颗粒物重量";
+
+// Quantification
+
+"A sesame seed weighs approximately %.3f grams." = "一粒芝麻重量约等于%.3f克";
+"People inhale about %d cubic meters of air per day." = "我们每天吸入的空气约为%d立方米";
+"The pollution particles you inhale today are as heavy as %@ sesame seeds." = "你今天吸入的空气污染颗粒约为%@粒芝麻";

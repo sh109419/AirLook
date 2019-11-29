@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StationsTableViewCell" id="Aiv-rJ-cfw" customClass="StationsTableViewCell" customModule="AirAlert" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Aiv-rJ-cfw" id="101-Fu-axn">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzu-ZW-9EQ">
+                        <rect key="frame" x="20" y="8" width="32" height="27.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="6hl-4P-6hO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="station name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBU-dX-vna">
+                        <rect key="frame" x="60" y="0.0" width="295" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="vzu-ZW-9EQ" secondAttribute="bottom" constant="8" id="48C-9Q-L25"/>
+                    <constraint firstAttribute="bottom" secondItem="dBU-dX-vna" secondAttribute="bottom" id="73n-1f-uad"/>
+                    <constraint firstItem="vzu-ZW-9EQ" firstAttribute="leading" secondItem="101-Fu-axn" secondAttribute="leading" constant="20" symbolic="YES" id="Kbr-sc-LU9"/>
+                    <constraint firstItem="vzu-ZW-9EQ" firstAttribute="top" secondItem="101-Fu-axn" secondAttribute="top" constant="8" id="Ku3-fc-6Bz"/>
+                    <constraint firstAttribute="trailing" secondItem="dBU-dX-vna" secondAttribute="trailing" constant="20" symbolic="YES" id="VVz-hY-UBU"/>
+                    <constraint firstItem="dBU-dX-vna" firstAttribute="leading" secondItem="vzu-ZW-9EQ" secondAttribute="trailing" constant="8" symbolic="YES" id="v9I-LO-kZd"/>
+                    <constraint firstItem="dBU-dX-vna" firstAttribute="top" secondItem="101-Fu-axn" secondAttribute="top" id="y1v-hP-FgH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="StationLabel" destination="dBU-dX-vna" id="6A3-TX-lY5"/>
+                <outlet property="aqiLabel" destination="vzu-ZW-9EQ" id="ybu-Dt-1um"/>
+            </connections>
+            <point key="canvasLocation" x="32.5" y="-29"/>
+        </tableViewCell>
+    </objects>
+</document>

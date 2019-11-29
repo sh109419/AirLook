@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  AirAlert
+
+  Created by hyf on 2019/2/13.
+  Copyright © 2019年 Deng Junqiang. All rights reserved.
+*/
+
+// it is diffrent with AirAlet's infoPlst.strings
+// if not selected Localization.English, the title always show Chinese
+
+"CFBundleDisplayName" = "Air Look";

@@ -1,0 +1,198 @@
+
+/* Class = "UILabel"; text = "Search Cities"; ObjectID = "13l-j8-0Ol"; */
+"13l-j8-0Ol.text" = "Search Cities";
+
+/* Class = "UILabel"; text = "Alert Level"; ObjectID = "1qn-Zq-lXs"; */
+"1qn-Zq-lXs.text" = "告警级别";
+
+/* Class = "UILabel"; text = "sh109419@163.com"; ObjectID = "1rN-df-LM4"; */
+//"1rN-df-LM4.text" = "sh109419@163.com";
+
+/* Class = "UINavigationController"; title = "navigation"; ObjectID = "3S7-fe-sCl"; */
+"3S7-fe-sCl.title" = "navigation";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "5m5-nZ-65G"; */
+"5m5-nZ-65G.text" = "Title";
+
+/* Class = "UILabel"; text = "Auto locate the nearest city"; ObjectID = "7Gg-b7-FtI"; */
+"7Gg-b7-FtI.text" = "自动定位当前城市"; //"Auto locate the nearest city";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "A75-FZ-S4o"; */
+"A75-FZ-S4o.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "AKw-pU-aHX"; */
+"AKw-pU-aHX.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Air Quality Levels"; ObjectID = "AV3-tL-lVc"; */
+"AV3-tL-lVc.text" = "空气质量级别";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BKh-bj-AmT"; */
+"BKh-bj-AmT.text" = "Label";
+
+/* Class = "UILabel"; text = "Health Implications"; ObjectID = "C7T-jW-pP3"; */
+"C7T-jW-pP3.text" = "健康提示";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "GvN-9K-2AU"; */
+"GvN-9K-2AU.text" = "0";
+
+/* Class = "UILabel"; text = "Today"; ObjectID = "InJ-WA-XbT"; */
+"InJ-WA-XbT.text" = "今天";
+
+/* <label in cell; title="Nearest"  id="W33-0e-4ej"/> */
+"QhI-CU-Lr1.text" = "附近站点";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "MWf-Sa-Xk3"; */
+"MWf-Sa-Xk3.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Alert"; ObjectID = "MWf-Sa-Xk3"; */
+"MWf-Sa-Xk3.headerTitle" = "告警";
+
+/* Class = "UITableViewController"; title = "Setting"; ObjectID = "Mp8-UH-yJQ"; */
+"Mp8-UH-yJQ.title" = "设置";
+
+/* Class = "UITableViewSection"; footerTitle = "  "; ObjectID = "OWj-Lv-iEl"; */
+"OWj-Lv-iEl.footerTitle" = "  ";
+
+/* Class = "UITableViewSection"; headerTitle = "About Me"; ObjectID = "wpN-jN-nL1"; */
+"wpN-jN-nL1.headerTitle" = "关于";
+
+/* Class = "UILabel"; text = "9:00"; ObjectID = "OsH-cM-6TB"; */
+"OsH-cM-6TB.text" = "9:00";
+
+/* Class = "UINavigationItem"; title = "air"; ObjectID = "Q4a-x2-Faz"; */
+"Q4a-x2-Faz.title" = "air";
+
+/* Class = "UITableViewSection"; footerTitle = "  "; ObjectID = "Sf5-AK-Dbm"; */
+"Sf5-AK-Dbm.footerTitle" = "  ";
+
+/* Class = "UITableViewSection"; headerTitle = "  "; ObjectID = "Sf5-AK-Dbm"; */
+"Sf5-AK-Dbm.headerTitle" = "  ";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "eD7-hp-h3l"; */
+"eD7-hp-h3l.text" = "邮件地址";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "ZvY-I0-y01"; */
+"ZvY-I0-y01.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "ZvY-I0-y01"; */
+"ZvY-I0-y01.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "All Clear Notification"; ObjectID = "aXS-zx-r6r"; */
+"aXS-zx-r6r.text" = "允许推送解除警报的通知";
+
+/* Class = "UILabel"; text = "125"; ObjectID = "bvP-Ie-G5i"; */
+"bvP-Ie-G5i.text" = "125";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "bvp-gf-077"; */
+"bvp-gf-077.headerTitle" = " ";
+
+/* Class = "UITextField"; placeholder = "Enter the city name you want"; ObjectID = "fJC-4b-cnT"; */
+"fJC-4b-cnT.placeholder" = "输入你想查询的城市";
+
+/* Class = "UITableViewSection"; footerTitle = "  "; ObjectID = "fOE-At-2KK"; */
+"fOE-At-2KK.footerTitle" = "  ";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "fgK-f6-sbQ"; */
+"fgK-f6-sbQ.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gGT-nC-vAf"; */
+"gGT-nC-vAf.text" = "Label";
+
+/* Class = "UITableViewController"; title = "Change City"; ObjectID = "gJn-rr-8TF"; */
+"gJn-rr-8TF.title" = "切换城市";
+
+/* Class = "UITableViewController"; title = "Alert Level"; ObjectID = "hiK-AV-3W7"; */
+"hiK-AV-3W7.title" = "告警级别";
+
+/* Class = "UITableViewController"; title = "Individual AQI"; ObjectID = "ja2-vC-kxa"; */
+"ja2-vC-kxa.title" = "空气质量指数详情";
+
+/* Class = "UIButton"; normalTitle = "Please wait for loading ......"; ObjectID = "k5k-tA-zq4"; */
+"19X-yV-WdP.normalTitle" = "请等待启动 ......";
+
+/* Class = "UILabel"; text = "Version"; ObjectID = "hir-hI-4o6"; */
+"hir-hI-4o6.text" = "版本";
+
+/* Class = "UILabel"; text = "Next day"; ObjectID = "nv0-mV-Whk"; */
+"nv0-mV-Whk.text" = "Next day";
+
+/* Class = "UILabel"; text = "Unknown"; ObjectID = "pBa-H7-VUv"; */
+"pBa-H7-VUv.text" = "Unknown";
+
+/* Class = "UILabel"; text = "0.0.1"; ObjectID = "qSB-Dx-7No"; */
+"qSB-Dx-7No.text" = "0.0.1";
+
+/* Class = "UITableViewController"; title = "air view"; ObjectID = "qkA-fC-q6O"; */
+"qkA-fC-q6O.title" = "air view";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "rQs-EG-Mgn"; */
+"iLZ-U2-hM1.title" = "返回";
+
+/* Class = "UIBarButtonItem"; title = "setting"; ObjectID = "sOW-Ov-ALE"; */
+"sOW-Ov-ALE.title" = "设置";
+
+/* Class = "UILabel"; text = "ShangHai"; ObjectID = "tEF-3F-CTH"; */
+"tEF-3F-CTH.text" = "ShangHai";
+
+/* Class = "UITableViewController"; title = "Air Quality Levels"; ObjectID = "tz4-Mk-CTq"; */
+"tz4-Mk-CTq.title" = "空气质量级别";
+
+/* Class = "UILabel"; text = "89"; ObjectID = "uZs-Ri-sFs"; */
+"uZs-Ri-sFs.text" = "89";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vnC-SV-X4m"; */
+"vnC-SV-X4m.text" = "Label";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "wAQ-cp-a8o"; */
+"wAQ-cp-a8o.text" = "Detail";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "y4g-mV-ffT"; */
+"y4g-mV-ffT.text" = "Title";
+
+/* Class = "UILabel"; text = "23C 41%"; ObjectID = "y7v-WO-mIT"; */
+"y7v-WO-mIT.text" = "23C 41%";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "yPa-4H-aVc"; */
+"yPa-4H-aVc.text" = "Title";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "Yk3-qM-ReE"; */
+"Yk3-qM-ReE.text" = "语言";
+
+/* Class = "LanguageTableViewController"; title = "Language"; ObjectID = "aHM-Rm-VL4"; */
+"aHM-Rm-VL4.title" = "语言";
+
+/* Class = "rightBarButtonItem"; title = "Done"; ObjectID = "taT-Lo-wbJ"; */
+"taT-Lo-wbJ.title" = "完成";
+
+/* Class = "navigationItem"; title = "Language"; ObjectID = "ugH-vX-fpW"; */
+"ugH-vX-fpW.title" = "语言";
+
+/* Class = "UITableViewSection"; headerTitle = "Air Quality Index Scale"; ObjectID = "fOE-At-2KK"; */
+"fOE-At-2KK.headerTitle" = "空气质量指数标度";
+
+/* Class = "navigationItem"; title = "Self-defined Attentions"; ObjectID = "Vsn-FP-faA"; */
+"Vsn-FP-faA.title" = "自定义注意事项";
+
+/* Class = "UILabel"; text = "Self-defined Attentions"; ObjectID = "2Sq-Iy-dQH"; */
+"2Sq-Iy-dQH.text" = "自定义注意事项";
+
+/* Class = "rightBarButtonItem"; title = "Save"; ObjectID = "o5m-yw-KPo"; */
+"o5m-yw-KPo.title" = "保存";
+
+/* <tabBarItem key="tabBarItem" title="Nearest" image="tab_list" id="W33-0e-4ej"/> */
+"W33-0e-4ej.title" = "附近站点";
+
+/*<tabBarItem key="tabBarItem" title="IAQI" image="tab_list" id="XIT-qo-gok"/>*/
+"XIT-qo-gok.title" = "指数详情";
+
+/*<tabBarItem key="tabBarItem" title="Visualization" image="tab_movie" id="bHN-I1-eCQ"/>*/
+"bHN-I1-eCQ.title" = "数量";
+
+/*<tabBarItem key="tabBarItem" title="Quantification" image="tab_weight" id="9OJ-v6-FnT"/>*/
+"9OJ-v6-FnT.title" = "重量";
+
+/*<tabBarItem key="tabBarItem" title="map" image="tab_map" id="gZV-aW-YSN"/>*/
+"gZV-aW-YSN.title" = "地图显示";
+
+// tabbaritem forecast
+"I2O-j3-kvY.title" = "空气预报";
