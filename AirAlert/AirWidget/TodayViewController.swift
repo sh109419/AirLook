@@ -72,7 +72,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         if  (airData?.OutOfDate4Widget() == true) {
             // 2.
-            AirRequest.sharedInstance.getAirData4Widget(stationID: (airData?.idx)!) { (data, error) in
+            AirRequest.sharedInstance.getAirData(stationID: (airData?.idx)!) { (data, error) in
                 DispatchQueue.main.async {
                     
                     // handle errors

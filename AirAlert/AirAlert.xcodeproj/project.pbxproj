@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1003AEAE21D1246D006ADAD0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1003AEAD21D1246D006ADAD0 /* Settings.swift */; };
 		1003AEB021D1255F006ADAD0 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1003AEAF21D1255F006ADAD0 /* LanguageTableViewController.swift */; };
-		102333E8227179D6009416DB /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102333E7227179D5009416DB /* Checkbox.swift */; };
 		1027AEC722267E3600432A5B /* UserdefinedAttentionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027AEC622267E3600432A5B /* UserdefinedAttentionsTableViewController.swift */; };
 		1040541621C24D3900999FFE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1040541821C24D3900999FFE /* Localizable.strings */; };
 		1040544121CBFBDE00999FFE /* AirLanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040544021CBFBDE00999FFE /* AirLanguageHelper.swift */; };
@@ -77,7 +76,6 @@
 /* Begin PBXFileReference section */
 		1003AEAD21D1246D006ADAD0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1003AEAF21D1255F006ADAD0 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
-		102333E7227179D5009416DB /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		1027AEC622267E3600432A5B /* UserdefinedAttentionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserdefinedAttentionsTableViewController.swift; sourceTree = "<group>"; };
 		1040541421C237D500999FFE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		1040541521C237D500999FFE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				109D13E9215615F90044D261 /* StationsTableViewCell.xib */,
 				106EFEEA21AD26400019587A /* AirTableViewDailyForecastCell.swift */,
 				106EFEE921AD26400019587A /* AirTableViewDailyForecastCell.xib */,
-				102333E7227179D5009416DB /* Checkbox.swift */,
 				108B17902123A79300B4FCCC /* Main.storyboard */,
 				108B178C2123A79300B4FCCC /* AppDelegate.swift */,
 				108B17A52126A9A300B4FCCC /* AirData.swift */,
@@ -367,7 +364,6 @@
 				1003AEAE21D1246D006ADAD0 /* Settings.swift in Sources */,
 				106EFEEC21AD26400019587A /* AirTableViewDailyForecastCell.swift in Sources */,
 				108B17A82126A9BC00B4FCCC /* AirRequest.swift in Sources */,
-				102333E8227179D6009416DB /* Checkbox.swift in Sources */,
 				108B178D2123A79300B4FCCC /* AppDelegate.swift in Sources */,
 				105D614A214826E9006406E1 /* AlertLevelTableViewController.swift in Sources */,
 				10FAF40322680307002557B9 /* RootViewController.swift in Sources */,

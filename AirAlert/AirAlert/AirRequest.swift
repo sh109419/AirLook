@@ -9,17 +9,17 @@
 import Foundation
 
 
-
-/* settings upload to server
+/*
+ ### API List
  
- station id changed:
-    func getAirData()
-    func getAirDataWithGeo
- 
- device token gen:
- alert level changed:
- recovery enabled changed:
-    func updateSettings()
+ * localhost/AirLook/setting/newToken/token
+ * localhost/AirLook/setting/changeStationID/3303/token
+ * localhost/AirLook/setting/changeAlertLevel/2/token
+ * localhost/AirLook/setting/changeRecoveryEnabled/false/token
+ * localhost/AirLook/airdata/id/3303
+ * localhost/AirLook/airdata/location/latitude;longitude
+ * localhost/AirLook/nearest/id/3303
+ * localhost/AirLook/search/city/shanghai
  
  */
 
@@ -34,43 +34,62 @@ class AirRequest: NSObject {
     
     //MARK: - request data from network
     
+    // new device token
+    //localhost/api/setting/newToken/token
+    func newToken(completed: @escaping RequestHandler) {
+        if let url = URL(string: "\(Constants.server)/setting/newToken/\(Settings.sharedInstance.deviceToken)") {
+            print(url)
+            performRequest(url: url) { (data,error) in completed(data, error) }
+        }
+    }
+    
     // update settings
-    func updateSettings(completed: @escaping RequestHandler) {
-        if let url = URL(string: "\(Constants.server)/api_updatesettings.php?id=\(Settings.sharedInstance.stationID)&key=\(Settings.sharedInstance.deviceToken)&level=\(Settings.sharedInstance.alertLevel)&recovery=\(Settings.sharedInstance.recoveryEnabled)") {
+    // localhost/api/setting/changestationID/3303/token
+    func changeStationID(completed: @escaping RequestHandler) {
+        if let url = URL(string: "\(Constants.server)/setting/changeStationID/\(Settings.sharedInstance.stationID)/\(Settings.sharedInstance.deviceToken)") {
             print(url)
             performRequest(url: url) { (data,error) in completed(data, error) }
         }
     }
     
-    // request with settings
-    func getAirData(completed: @escaping RequestHandler) {
-        if let url = URL(string: "\(Constants.server)/api_cityfeed.php?id=\(Settings.sharedInstance.stationID)&key=\(Settings.sharedInstance.deviceToken)&level=\(Settings.sharedInstance.alertLevel)&recovery=\(Settings.sharedInstance.recoveryEnabled)") {
+    // localhost/api/setting/changealertLevel/2/token
+    func changeAlertLevel(completed: @escaping RequestHandler) {
+        if let url = URL(string: "\(Constants.server)/setting/changeAlertLevel/\(Settings.sharedInstance.alertLevel)/\(Settings.sharedInstance.deviceToken)") {
             print(url)
             performRequest(url: url) { (data,error) in completed(data, error) }
         }
     }
     
-    // request by widget
-    func getAirData4Widget(stationID: Int, completed: @escaping RequestHandler) {
-        if let url = URL(string: "\(Constants.server)/api_cityfeed.php?id=\(stationID)") {
+    // localhost/api/setting/changerecoveryEnabled/false/token
+    func changeRecoveryEnabled(completed: @escaping RequestHandler) {
+        if let url = URL(string: "\(Constants.server)/setting/changeRecoveryEnabled/\(Settings.sharedInstance.recoveryEnabled)/\(Settings.sharedInstance.deviceToken)") {
+            print(url)
+            performRequest(url: url) { (data,error) in completed(data, error) }
+        }
+    }
+    
+    // localhost/api/airdata/id/3303
+    func getAirData(stationID: Int, completed: @escaping RequestHandler) {
+        if let url = URL(string: "\(Constants.server)/airdata/id/\(stationID)") {
             print(url)
             performRequest(url: url) { (data,error) in completed(data, error) }
         }
     }
  
-    // request with settings, get station id from location
+    // localhost/api/airdata/location/latitude;longitude
     func getAirDataWithGeo(latitude: Double, longitude: Double, completed: @escaping RequestHandler) {
-      if let url = URL(string: "\(Constants.server)/api_locationfeed.php?geo=\(latitude);\(longitude)&key=\(Settings.sharedInstance.deviceToken)&level=\(Settings.sharedInstance.alertLevel)&recovery=\(Settings.sharedInstance.recoveryEnabled)") {
+      if let url = URL(string: "\(Constants.server)/airdata/location/\(latitude);\(longitude)") {
         print(url)
         performRequest(url: url) { data, error in completed(data, error) }
         }
     }
     
-    // Search Request without settings
+    
+    // localhost/api/search/city/shanghai
     func getSearchData(keyword: String, completed: @escaping RequestHandler) {
         // search request
-        //https://api.waqi.info/search/?token=c01075aa024f264013e856b80a34fc1d526b404f&keyword=shanghai
-        let urlStr = "\(Constants.server)/api_searchbyname.php?keyword=\(keyword)"
+       
+        let urlStr = "\(Constants.server)/search/city/\(keyword)"
         // allow search by Chinese
         let encodedUrl = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 
@@ -80,25 +99,25 @@ class AirRequest: NSObject {
         }
     }
     
-    // get geo base on IP
-    func getGeoBaseonIP(completed: @escaping RequestHandler) {
+    // get Station id base on IP
+    func getStationIDBaseonIP(completed: @escaping RequestHandler) {
         if let url = URL(string: Constants.getstationbyipurl) {
             print(url)
             performRequest(url: url) { (data,error) in completed(data, error) }
         }
     }
     
-    // Nearest Request without Settings Data
+    // localhost/api/nearest/id/3303
     func getNearestList(airdataID: Int, completed: @escaping RequestHandler) {
         // nearest request
-        if let url = URL(string: "\(Constants.server)/api_nearestfeed.php?id=\(airdataID)") {
+        if let url = URL(string: "\(Constants.server)/nearest/id/\(airdataID)") {
             print(url)
             performRequest(url: url) { data, error in completed(data, error) }
         }
     }
     
     private func performRequest(url: URL, completed: @escaping RequestHandler) {
-        URLSession.shared.configuration.timeoutIntervalForRequest = 15 // default = 60's
+        //URLSession.shared.configuration.timeoutIntervalForRequest = 15 // default = 60's
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             var returnError = error
@@ -119,7 +138,7 @@ class AirRequest: NSObject {
                 let dictionary = json as? [String: Any],
                 let status = dictionary["status"] as? String
                 else {
-                    print("JSON parsing failed")
+                    print("JSON parsing failed-\(data)")
                     return
             }
             // get json data
@@ -137,8 +156,8 @@ class AirRequest: NSObject {
     private struct Constants {
         //static let token = "c01075aa024f264013e856b80a34fc1d526b404f"
         //static let httpPrefix = "https://api.waqi.info/feed"
-        //static let server = "http://127.0.0.1"
-        static let server = "http://108.61.200.158"
+        //static let server = "http://192.168.1.8/airlook/api"
+        static let server = "http://108.61.200.158/AirLook/api"
         static let getstationbyipurl = "https://api.waqi.info/feed/here/?token=c01075aa024f264013e856b80a34fc1d526b404f"
     }
 

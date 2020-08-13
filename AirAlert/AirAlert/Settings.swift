@@ -19,13 +19,17 @@ class Settings {
         static let stationID = "StationID"
         static let deviceToken = "DeviceToken"
         static let languageID = "LanguageID" // 0: english 1: chinese
+        static let stationSelected = "StationSelected"
+        static let tokenToDB = "TokenToDB"
         
         struct Defaults {
             static let alertLevel = NSNumber(value: 2 as Int32) // default, alert if AQI  >= 101
             static let recoveryEnabled = true
-            static let stationID = -1
+            static let stationID = 3304 // default show shanghai
             static let deviceToken = ""
             static let languageID = -1 // language unselected
+            static let stationSelected = false
+            static let tokenToDB = false
         }
     }
     
@@ -41,7 +45,7 @@ class Settings {
         set {
             UserDefaults.standard.setValue(NSNumber(value: newValue as Int), forKey: Constants.alertLevel)
             // didSet
-            AirRequest.sharedInstance.updateSettings { (data, error) in print("update settings: alertLevel") }
+            AirRequest.sharedInstance.changeAlertLevel { (data, error) in print("update settings: alertLevel") }
         }
     }
     
@@ -56,7 +60,7 @@ class Settings {
         set {
             UserDefaults.standard.set(newValue, forKey: Constants.recoveryEnabled)
             // didSet
-            AirRequest.sharedInstance.updateSettings { (data, error) in print("update settings: recoveryEnabled") }
+            AirRequest.sharedInstance.changeRecoveryEnabled { (data, error) in print("update settings: recoveryEnabled") }
         }
     }
     
@@ -67,14 +71,21 @@ class Settings {
         set {
             UserDefaults.standard.set(newValue, forKey: Constants.stationID)
             // didSet
-            // merge updatesetting() with getairdata()
+             AirRequest.sharedInstance.changeStationID { (data, error) in print("update settings: station id-\(Settings.sharedInstance.stationID)") }
         }
     }
     
     // there is no station ID, while opening app the first time
-    func NoStationSelected() -> Bool {
-        return stationID == Constants.Defaults.stationID
+    
+    var stationSelected: Bool {
+        get {
+            return UserDefaults.standard.value(forKey: Constants.stationSelected) as? Bool ?? Constants.Defaults.stationSelected
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Constants.stationSelected)
+        }
     }
+    
     
     var deviceToken: String {
         get {
@@ -83,29 +94,55 @@ class Settings {
         set {
             UserDefaults.standard.set(newValue, forKey: Constants.deviceToken)
             // didSet
-            // registe service
-            for _ in 1...20 {
-                if Settings.sharedInstance.NoStationSelected() { sleep(1) }
-                else
-                { break }
+            AirRequest.sharedInstance.newToken { (data, error) in
+                DispatchQueue.main.async {
+                    // handle errors
+                    guard let data = data, error == nil else {
+                        print(error ?? "newToken.error")
+                        return
+                    }
+                    //print(data as String)
+                    // parsing JSON data
+                    guard
+                        let json = try? JSONSerialization.jsonObject(with: data),
+                        let dictionary = json as? [String: Any],
+                        let result = dictionary["result"] as? Bool
+                        else {
+                            print("JSON parsing failed: @newToken")
+                            return
+                    }
+                    print("device token is in DB")
+                    Settings.sharedInstance.tokenToDB = result
+                }
             }
-            AirRequest.sharedInstance.updateSettings { (data, error) in print("update settings: device token") }
+            
         }
     }
     
     // there is no device token, while opening app the first time
+    
     func NoDeviceToken() -> Bool {
         return deviceToken == Constants.Defaults.deviceToken
     }
     
+    // make sure the device token sent to db
+    var tokenToDB: Bool {
+        get {
+            return UserDefaults.standard.value(forKey: Constants.tokenToDB) as? Bool ?? Constants.Defaults.tokenToDB
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Constants.tokenToDB)
+        }
+    }
+    
+    
+    // local stored
     var languageID: Int {
         get {
             return UserDefaults.standard.value(forKey: Constants.languageID) as? Int ?? Constants.Defaults.languageID
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Constants.languageID)
-            // didSet
-            // merge updatesetting() with getairdata()
         }
     }
     

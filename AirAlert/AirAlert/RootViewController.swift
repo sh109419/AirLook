@@ -26,7 +26,7 @@ class RootViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         /*
          // set navigation bar transparent -- is to set a "NULL" image
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -48,6 +48,7 @@ class RootViewController: UIViewController {
          2）添加label的点击手势
          3）在label点击事件中执行segue
          */
+       
         // register tap gesture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(singleTapHandler(_:)))
         tapGesture.numberOfTapsRequired = 1
@@ -58,28 +59,40 @@ class RootViewController: UIViewController {
         aqiLabel.isUserInteractionEnabled = true
         aqiLabel.addGestureRecognizer(tapGesture2)
         
+        // register swipe gesture 滑动换页
+        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(singleTapHandler(_:)))
+        leftSwipeGesture.direction = UISwipeGestureRecognizer.Direction.left
+        view.addGestureRecognizer(leftSwipeGesture)
+        
+    
         // add emitter layer to viwe
         initEmitterLayer()
         
         /*
          首次安装定位处理
-         1）通过IP定位
-         2）通过Loation定位，如果用户允许
-         3）以上皆失败，获取默认位置 上海 3304（中文版本） 美国 加利福尼亚州（英文版本）
+         1) 通过Location定位，获取airdata，刷新界面
+         2）如果用户禁用location功能
+            2.1）使用IP定位获取StationID
+            2.2）IP定位失败，使用默认位置3304
+            2.3）获取airdata， 刷新界面
          */
+        
         // init monitoring station
-        if Settings.sharedInstance.NoStationSelected() {//while init App
-            // register for Location Authorization Denied
+        if (Settings.sharedInstance.stationSelected == false) {//while init App
+            Settings.sharedInstance.stationSelected = true
+            print("首次使用App，正在获取位置信息")
+            
+            // register for Location Authorization Denied，
+            // 注册用户禁用地理位置消息的通知；当用户禁用获取地理位置功能，触发通知函数
             NotificationCenter.default.addObserver(forName: .UserDeniedLocationAuthorization, object: nil, queue: OperationQueue.main) { (Notification) in
-                self.refreshData()
+                self.requestAirDataByIP()
+                
                 print("received notification -- UserDeniedLocationAuthorization")
                 NotificationCenter.default.removeObserver(self, name: .UserDeniedLocationAuthorization, object: nil)
             }
-            // set defult statoin
-            Settings.sharedInstance.stationID = 3304
-            requestGeoByIP()//get geo base on IP
             
-            requestLocation()// get geo base on location
+            //  通过物理定位，获取airdata, 刷新界面
+            requestAirDataByLocation()// get geo base on location
             
             return
         }
@@ -104,13 +117,18 @@ class RootViewController: UIViewController {
     
     //MARK: - location services
     
-    func requestGeoByIP() {
-        print("requestGeoByIp")
-        AirRequest.sharedInstance.getGeoBaseonIP { (data, error) in
+    func requestAirDataByIP() {
+        print("requestStationIDByIp")
+        AirRequest.sharedInstance.getStationIDBaseonIP { (data, error) in
             DispatchQueue.main.async {
+                
+                defer {
+                    self.fetchAirData()
+                }
+                
                 // handle errors
                 guard let data = data, error == nil else {
-                    print(error ?? "getGeoBaseonIP.error")
+                    print(error ?? "getCityBaseonIP.error")
                     return
                 }
                 
@@ -126,14 +144,15 @@ class RootViewController: UIViewController {
                 
                 Settings.sharedInstance.stationID = stationid
                 print(stationid)
+                
             }
             
         }
         
     }
     
-    //https://api.waqi.info/feed/Shanghai/?token=c01075aa024f264013e856b80a34fc1d526b404f
-    func requestLocation() {
+    
+    func requestAirDataByLocation() {
         print("request location")
         // 定位认证 requestWhenInUseAuthorization()
         AirLocationManager.shareInstance.requestLocation { (location, error) in
@@ -184,7 +203,7 @@ class RootViewController: UIViewController {
     fileprivate func fetchAirData() {
         if (airData == nil) || (airData?.OutOfDate() == true) {
             
-            AirRequest.sharedInstance.getAirData { (data, error) in
+            AirRequest.sharedInstance.getAirData(stationID: Settings.sharedInstance.stationID) { (data, error) in
                 DispatchQueue.main.async {
                     // handle errors
                     guard let data = data, error == nil else {

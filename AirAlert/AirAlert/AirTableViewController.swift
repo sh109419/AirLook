@@ -8,7 +8,7 @@
 
 import UIKit
 import os.log
-import UserNotifications
+//import UserNotifications
 import MapKit
 
 class MapAnnotation: MKPointAnnotation {

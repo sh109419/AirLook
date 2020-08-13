@@ -52,6 +52,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.shared.registerForRemoteNotifications()
         }
         
+        // 检查token是否保存到数据库
+        if (Settings.sharedInstance.tokenToDB == false) {
+            if Settings.sharedInstance.NoDeviceToken() == false {
+                print("检查token是否保存到数据库")
+                Settings.sharedInstance.deviceToken = Settings.sharedInstance.deviceToken
+            }
+        }
+        
+        
         return true
     }
 
@@ -78,7 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         os_log("applicationDidEnterBackground", log: AppDelegate.log)
         if airData != nil {
             airData?.Save()
-            Settings.sharedInstance.stationID = (airData?.idx)!
+            if (Settings.sharedInstance.stationID != (airData?.idx)!) {
+                Settings.sharedInstance.stationID = (airData?.idx)!
+            }
         }
     }
 

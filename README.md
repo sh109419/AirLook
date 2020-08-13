@@ -17,6 +17,10 @@ Air Look is a free iOS App to visualize air pollution which is available on App 
 * Map Kit
 * User Notifications
 * Widget
+* Slide between tabs with an animation
+
+### Server
+the [server](https://github.com/sh109419/AirLookServer) part of AirLook project, using Phalcon4, PHP.
 
 
 ### Data Source
